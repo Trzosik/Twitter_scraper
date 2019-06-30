@@ -27,11 +27,17 @@ def stats_for_retweet(working_file):
     return list_of_retweet_stats
 
 
+def figure_retweet_time(working_file):
+    working_file.set_index('created_at', inplace=True, drop=False)
+    working_file[['retweet_count']].plot(figsize=[12, 6], subplots=True)
+    plt.savefig('fig_retweet_time.png')
+
+
 def main():
     working_file = setup()
     list_of_retweets_stats = stats_for_retweet(working_file)
     print(list_of_retweets_stats)
-    # print(working_file)
+    figure_retweet_time(working_file)
 
 
 if __name__ == '__main__':
