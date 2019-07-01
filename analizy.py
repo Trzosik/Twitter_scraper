@@ -34,6 +34,18 @@ def stats_for_retweet(working_file):
     return list_of_retweet_stats
 
 
+def stats_for_favorite(working_file):
+    f_stats = working_file.favorite_count
+    f_mean = np.mean(f_stats)
+    f_sum = np.sum(f_stats)
+    f_median = np.median(f_stats)
+    f_std = np.std(f_stats)
+    f_max = np.max(f_stats)
+    f_min = np.min(f_stats)
+    list_of_favorite_stats = ['mean:', f_mean, 'sum:', f_sum, 'median:', f_median, 'std:', f_std, 'max:', f_max, 'min:', f_min]
+    return list_of_favorite_stats
+
+
 # This function returns figure of retweet stat in time.
 
 
@@ -41,6 +53,12 @@ def figure_retweet_time(working_file):
     working_file.set_index('created_at', inplace=True, drop=False)
     working_file[['retweet_count']].plot(figsize=[12, 6], subplots=True)
     plt.savefig('fig_retweet_time.png')
+
+
+def figure_favorite_time(working_file):
+    working_file.set_index('created_at', inplace=True, drop=False)
+    working_file[['favorite_count']].plot(figsize=[12, 6], subplots=True)
+    plt.savefig('fig_favorite_time.png')
 
 
 def main():
