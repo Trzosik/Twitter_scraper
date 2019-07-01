@@ -7,12 +7,19 @@ import nltk
 import matplotlib.pyplot as plt
 import datetime
 
+# Analysis module. Work in progress.
+
+# Setup gets filename from user and turns json file into pandaframe. Returns working file.
+
 
 def setup():
     intro_file = input('Give filename:')
     working_file = pd.read_json('{}.json'.format(intro_file))
     working_file = working_file.transpose()
     return working_file
+
+
+# Stats for retweet uses working file and returns list of stat data for retweets: sum, mean, median, std, max, min.
 
 
 def stats_for_retweet(working_file):
@@ -25,6 +32,9 @@ def stats_for_retweet(working_file):
     r_min = np.min(r_stats)
     list_of_retweet_stats = ['mean:', r_mean, 'sum:', r_sum, 'median:', r_median, 'std:', r_std, 'max:', r_max, 'min:', r_min]
     return list_of_retweet_stats
+
+
+# This function returns figure of retweet stat in time.
 
 
 def figure_retweet_time(working_file):

@@ -2,7 +2,7 @@ import tweepy
 import json
 import datetime
 
-# Twitter scraper - user_timeline scraping via API.
+# Twitter scraper - user_timeline scraping via API with tweepy.
 
 # Following block of code contains 4 params: first two consumer keys, two other app tokens
 # Together they are used to authorize our app via Twitter API
@@ -56,7 +56,7 @@ def get_user_tweets():
     return output_tweets, user_name
 
 
-# Function output to json saves return from ger user tweets to json file.
+# Function output to json saves return from get user tweets to json file.
 
 
 def output_tweets_to_json(output_tweets, user_name):
