@@ -1,4 +1,4 @@
-# This is the Twitter_Scrapper by Adrian Trzoss. App that conetcts to Twitter API via Tweepy library and gets Twitter User's Timeline of tweets that later could be used during some data mining.
+# This is the Twitter_Scrapper by Adrian Trzoss. App that connetcts to Twitter API via Tweepy library and gets Twitter User's Timeline of tweets that later could be used during some data mining.
 
 # Contents:
 
